@@ -1,8 +1,8 @@
 gocassa
 =======
 
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg "GoDoc")](http://godoc.org/github.com/monzo/gocassa)
-[![Build Status](https://img.shields.io/travis/monzo/gocassa/master.svg "Build Status")](https://travis-ci.org/monzo/gocassa)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg "GoDoc")](http://godoc.org/github.com/stut/gocassa)
+[![Build Status](https://img.shields.io/travis/stut/gocassa/master.svg "Build Status")](https://travis-ci.org/stut/gocassa)
 
 Gocassa is a high-level library on top of [gocql](https://github.com/gocql/gocql).
 
@@ -10,7 +10,7 @@ Current version: v2.0.2
 
 Compared to gocql it provides query building, adds data binding, and provides easy-to-use "recipe" tables for common query use-cases. Unlike [cqlc](https://github.com/relops/cqlc), it does not use code generation.
 
-For docs, see: [https://godoc.org/github.com/monzo/gocassa](https://godoc.org/github.com/monzo/gocassa)
+For docs, see: [https://godoc.org/github.com/stut/gocassa](https://godoc.org/github.com/stut/gocassa)
 
 ## Usage
 
@@ -23,7 +23,7 @@ import(
     "fmt"
     "time"
 
-    "github.com/monzo/gocassa"
+    "github.com/stut/gocassa"
 )
 
 type Sale struct {
@@ -62,7 +62,7 @@ func main() {
 }
 ```
 
-[link to this example](https://github.com/monzo/gocassa/blob/master/examples/table1/table1.go)
+[link to this example](https://github.com/stut/gocassa/blob/master/examples/table1/table1.go)
 
 You can pass additional options to a gocassa `Op` to further configure your queries, for example the following query orders the results by the field "Name" in descending order and limits the results to a total of 100.
 
@@ -115,7 +115,7 @@ Gocassa provides multiple table types with their own unique interfaces:
     salesTable.Read("sale-1", &result).Run()
 }
 ```
-[link to this example](https://github.com/monzo/gocassa/blob/master/examples/map_table1/map_table1.go)
+[link to this example](https://github.com/stut/gocassa/blob/master/examples/map_table1/map_table1.go)
 
 Read, Set, Update, and Delete all happen by "Id".
 
@@ -129,7 +129,7 @@ Read, Set, Update, and Delete all happen by "Id".
     results := []Sale{}
     err := salesTable.List("seller-1", nil, 0, &results).Run()
 ```
-[link to this example](https://github.com/monzo/gocassa/blob/master/examples/multimap_table1/multimap_table1.go)
+[link to this example](https://github.com/stut/gocassa/blob/master/examples/multimap_table1/multimap_table1.go)
 
 For examples on how to do pagination or Update with this table, refer to the example (linked under code snippet).
 
